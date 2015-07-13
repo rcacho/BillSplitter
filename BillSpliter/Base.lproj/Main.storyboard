@@ -31,15 +31,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpZ-rU-6Ql">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="CalculateSeperateBills">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="calculateSplitAmount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="w1h-yf-qUC"/>
-                                </connections>
-                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="y07-Iv-uT0">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <connections>
@@ -49,15 +40,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JpZ-rU-6Ql" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="5pv-of-irb"/>
                             <constraint firstItem="zEO-i7-7Oz" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="8ZL-Ec-liA"/>
                             <constraint firstItem="y07-Iv-uT0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="FIk-RW-6aa"/>
+                            <constraint firstItem="zEO-i7-7Oz" firstAttribute="top" secondItem="y07-Iv-uT0" secondAttribute="bottom" constant="46" id="GN7-ko-reC"/>
                             <constraint firstItem="dRD-Gx-Xsx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="J5N-tO-Pvq"/>
                             <constraint firstItem="y07-Iv-uT0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="JnN-lA-jZn"/>
-                            <constraint firstItem="zEO-i7-7Oz" firstAttribute="top" secondItem="JpZ-rU-6Ql" secondAttribute="bottom" constant="8" id="Mse-Ar-9mE"/>
-                            <constraint firstItem="JpZ-rU-6Ql" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ZgI-gr-kjC"/>
                             <constraint firstItem="dRD-Gx-Xsx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="as8-fD-zRq"/>
-                            <constraint firstItem="JpZ-rU-6Ql" firstAttribute="top" secondItem="y07-Iv-uT0" secondAttribute="bottom" constant="8" id="jWD-Px-lIB"/>
                             <constraint firstItem="y07-Iv-uT0" firstAttribute="top" secondItem="dRD-Gx-Xsx" secondAttribute="bottom" constant="-1" id="pO6-Ln-T5h"/>
                             <constraint firstItem="zEO-i7-7Oz" firstAttribute="top" secondItem="y07-Iv-uT0" secondAttribute="bottom" constant="8" id="qJr-3m-Zmn"/>
                             <constraint firstItem="dRD-Gx-Xsx" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="rDk-8F-VJM"/>
@@ -67,7 +55,6 @@
                             <mask key="subviews">
                                 <exclude reference="zEO-i7-7Oz"/>
                                 <exclude reference="dRD-Gx-Xsx"/>
-                                <exclude reference="JpZ-rU-6Ql"/>
                                 <exclude reference="y07-Iv-uT0"/>
                             </mask>
                             <mask key="constraints">
@@ -77,11 +64,8 @@
                                 <exclude reference="FIk-RW-6aa"/>
                                 <exclude reference="JnN-lA-jZn"/>
                                 <exclude reference="pO6-Ln-T5h"/>
-                                <exclude reference="5pv-of-irb"/>
-                                <exclude reference="ZgI-gr-kjC"/>
-                                <exclude reference="jWD-Px-lIB"/>
                                 <exclude reference="8ZL-Ec-liA"/>
-                                <exclude reference="Mse-Ar-9mE"/>
+                                <exclude reference="GN7-ko-reC"/>
                                 <exclude reference="qJr-3m-Zmn"/>
                                 <exclude reference="wza-pP-K0K"/>
                             </mask>
@@ -90,7 +74,6 @@
                             <mask key="subviews">
                                 <include reference="zEO-i7-7Oz"/>
                                 <include reference="dRD-Gx-Xsx"/>
-                                <include reference="JpZ-rU-6Ql"/>
                                 <include reference="y07-Iv-uT0"/>
                             </mask>
                             <mask key="constraints">
@@ -100,11 +83,8 @@
                                 <include reference="FIk-RW-6aa"/>
                                 <include reference="JnN-lA-jZn"/>
                                 <include reference="pO6-Ln-T5h"/>
-                                <include reference="5pv-of-irb"/>
-                                <include reference="ZgI-gr-kjC"/>
-                                <include reference="jWD-Px-lIB"/>
                                 <include reference="8ZL-Ec-liA"/>
-                                <include reference="Mse-Ar-9mE"/>
+                                <include reference="GN7-ko-reC"/>
                                 <exclude reference="qJr-3m-Zmn"/>
                                 <include reference="wza-pP-K0K"/>
                             </mask>
@@ -112,7 +92,6 @@
                     </view>
                     <connections>
                         <outlet property="billAmountTextField" destination="dRD-Gx-Xsx" id="vps-EG-5K9"/>
-                        <outlet property="calculateBillButton" destination="JpZ-rU-6Ql" id="byZ-5T-y1O"/>
                         <outlet property="numberOfBillSlider" destination="y07-Iv-uT0" id="bII-wC-vmd"/>
                         <outlet property="splitBillAmountLabel" destination="zEO-i7-7Oz" id="WQt-Ni-3IR"/>
                     </connections>
