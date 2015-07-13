@@ -36,9 +36,18 @@
 }
 
 - (IBAction)calculateSplitAmount:(UIButton *)sender {
-    NSDecimalNumber *splitbill = [self.billAmount decimalNumberByDividingBy:[[NSDecimalNumber alloc] initWithFloat:self.numberOfBillSlider.value]];
+    NSDecimalNumberHandler *roundUp = [NSDecimalNumberHandler
+                                       decimalNumberHandlerWithRoundingMode:NSRoundUp
+                                       scale:2
+                                       raiseOnExactness:NO
+                                       raiseOnOverflow:NO
+                                       raiseOnUnderflow:NO
+                                       raiseOnDivideByZero:YES];
+    
+    NSDecimalNumber *splitBill = [self.billAmount decimalNumberByDividingBy:[[NSDecimalNumber alloc] initWithFloat:self.numberOfBillSlider.value] withBehavior:roundUp];
+    NSDecimalNumber *tipAmount = [splitBill decimalNumberByMultiplyingBy:[[NSDecimalNumber alloc] initWithFloat:0.15]                                    withBehavior:roundUp];
     NSLog(@"This is the bill amount :%@",self.billAmount);
-    self.splitBillAmountLabel.text = [NSString stringWithFormat:@"%@",splitbill];
+    self.splitBillAmountLabel.text = [NSString stringWithFormat:@"Bill: %@ + Tip Amount:%@",splitBill, tipAmount];
     
 }
 
